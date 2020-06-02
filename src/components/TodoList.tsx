@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Todo from "../services/Todo";
 import {getTodos} from "../services/todoService";
 import TodoItem from "./TodoItem";
-import {Row, Space} from "antd";
+import { Row } from "antd";
 import TodoForm from "./TodoForm";
 import styles from './styles.module.css';
 
@@ -39,7 +39,7 @@ class TodoList extends Component<any, TodoListState> {
                         <TodoForm reload={this.loadPage}/>
                         <Row className={styles.todoRows}>
                             {this.state.todos.map((todo: Todo) =>
-                                <TodoItem key={todo.id} todo={todo} />
+                                <TodoItem key={todo.id} todo={todo} reload={this.loadPage}/>
                             )}
                         </Row>
                     </>
